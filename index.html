@@ -1,0 +1,1070 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="ASTRA ERP" />
+    <meta name="theme-color" content="#0f766e" />
+    <title>ASTRA ERP Demo</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/app.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="layout">
+      <aside class="sidebar" role="navigation" aria-label="ERP modules">
+        <div class="sidebar-header">
+          <div class="logo">ASTRA</div>
+          <button
+            class="sidebar-toggle"
+            id="sidebarToggle"
+            type="button"
+            aria-label="Toggle sidebar"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+
+        <nav class="module-menu" aria-label="Main navigation">
+          <button class="nav" type="button" data-label="Home">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+          </button>
+          <button
+            class="nav active"
+            type="button"
+            data-label="Sales"
+            data-module-target="sales-enquiry"
+          >
+            <i class="fa-solid fa-file-signature"></i>
+            <span>Sales</span>
+          </button>
+          <button class="nav" type="button" data-label="Financials">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Financials</span>
+          </button>
+          <button class="nav" type="button" data-label="Inventory">
+            <i class="fa-solid fa-boxes-stacked"></i>
+            <span>Inventory</span>
+          </button>
+          <button
+            class="nav"
+            type="button"
+            data-label="Masters"
+            data-module-target="customer-master"
+          >
+            <i class="fa-solid fa-address-book"></i>
+            <span>Masters</span>
+          </button>
+          <button class="nav" type="button" data-label="Fixed Asset">
+            <i class="fa-solid fa-rotate"></i>
+            <span>Fixed Asset</span>
+          </button>
+          <button class="nav" type="button" data-label="Production">
+            <i class="fa-solid fa-industry"></i>
+            <span>Production</span>
+          </button>
+          <button class="nav" type="button" data-label="POS">
+            <i class="fa-solid fa-cash-register"></i>
+            <span>POS</span>
+          </button>
+          <button class="nav" type="button" data-label="Quality Control">
+            <i class="fa-solid fa-chart-column"></i>
+            <span>Quality Control</span>
+          </button>
+          <button class="nav" type="button" data-label="Settings">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+          </button>
+        </nav>
+      </aside>
+
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <main class="main">
+        <div class="top">
+          <div class="top-search">
+            <button
+              class="mobile-menu-toggle"
+              id="mobileMenuToggle"
+              type="button"
+              aria-label="Toggle menu"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <input
+              class="search"
+              placeholder="Search customer, enquiry, quotation..."
+              aria-label="Search ERP records"
+            />
+          </div>
+
+          <div class="profile-widget">
+            <img
+              class="profile-avatar"
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              alt="User profile"
+            />
+            <div class="profile-meta">
+              <strong>Joshua A</strong>
+              <span id="profileDateTime">04 Jun 2026, 10:30 AM</span>
+            </div>
+          </div>
+        </div>
+
+        <section
+          class="module active-module"
+          data-module="sales-enquiry"
+          aria-labelledby="salesModuleTitle"
+        >
+          <div class="module-heading" aria-label="Sales breadcrumb">
+            <strong>Sales</strong>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Sales Enquiry</span>
+          </div>
+
+          <div class="module-tabs">
+            <div class="active">
+              <i class="fa-regular fa-clipboard"></i>
+              Sales Enquiry
+            </div>
+            <div>
+              <i class="fa-regular fa-file-lines"></i>
+              Quotation
+            </div>
+            <div>
+              <i class="fa-solid fa-cart-shopping"></i>
+              Sales Order
+              <span class="tab-count">3</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-file-invoice"></i>
+              Invoice
+            </div>
+            <div>
+              <i class="fa-solid fa-rotate-right"></i>
+              Sales Return
+            </div>
+            <div>
+              <i class="fa-regular fa-file"></i>
+              Credit Note
+            </div>
+          </div>
+
+          <div class="toolbar">
+            <div class="record-title">
+              <span class="record-icon">
+                <i class="fa-regular fa-clipboard"></i>
+              </span>
+              <span>
+                <small class="record-crumb">Sales &gt; Sales Enquiry</small>
+                <h2 id="salesModuleTitle">New Sales Enquiry</h2>
+              </span>
+              <span class="status-pill info">New</span>
+              <span class="status-pill warning">Medium</span>
+            </div>
+
+            <div class="toolbar-actions">
+              <button class="btn muted" type="button" disabled>
+                ENQ-2526-0001
+              </button>
+              <button class="btn" type="button" data-action="discard">
+                <i class="fa-solid fa-xmark"></i>
+                Discard
+              </button>
+              <button class="btn" type="button" data-action="new">+ New</button>
+              <button class="btn" type="button" data-action="convert">
+                <i class="fa-regular fa-file-lines"></i>
+                Convert To Quote
+              </button>
+              <button class="btn primary" type="button" data-action="save">
+                <i class="fa-solid fa-floppy-disk"></i>
+                Save
+              </button>
+            </div>
+          </div>
+
+          <div class="quick-actions" aria-label="Sales quick actions">
+            <button class="quick-action" type="button">
+              <i class="fa-solid fa-sort"></i>
+              <span>Sorting</span>
+            </button>
+            <button class="quick-action" type="button">
+              <i class="fa-solid fa-rotate-right"></i>
+              <span>Refresh</span>
+            </button>
+            <button class="quick-action" type="button">
+              <i class="fa-solid fa-print"></i>
+              <span>Print</span>
+            </button>
+            <button class="quick-action" type="button">
+              <i class="fa-solid fa-file-export"></i>
+              <span>Export</span>
+            </button>
+            <button class="quick-action" type="button">
+              <i class="fa-solid fa-chart-column"></i>
+              <span>Graph</span>
+            </button>
+            <button class="quick-action" type="button">
+              <i class="fa-solid fa-database"></i>
+              <span>Backtrack</span>
+            </button>
+            <button class="quick-action" type="button">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+              <span>Customize</span>
+            </button>
+            <button class="quick-action" type="button">
+              <i class="fa-solid fa-filter"></i>
+              <span>Filter</span>
+              <i class="fa-solid fa-caret-down quick-caret"></i>
+            </button>
+            <button class="quick-action" type="button">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <span>Analyze</span>
+            </button>
+            <button class="quick-action" type="button">
+              <i class="fa-solid fa-shuffle"></i>
+              <span>Cross-reference</span>
+            </button>
+            <button class="quick-action" type="button">
+              <i class="fa-solid fa-gears"></i>
+              <span>Options</span>
+              <i class="fa-solid fa-caret-down quick-caret"></i>
+            </button>
+            <button class="quick-action" type="button">
+              <i class="fa-regular fa-circle-xmark"></i>
+              <span>Close</span>
+            </button>
+          </div>
+
+          <div
+            class="wizard"
+            data-wizard
+            data-submit-title="Submitted"
+            data-submit-message="Sales Enquiry submitted successfully."
+          >
+            <div class="steps" role="tablist" aria-label="Sales enquiry steps">
+              <button class="step-tab active" type="button" data-step="0">
+                Header
+              </button>
+              <button class="step-tab" type="button" data-step="1">
+                Items
+                <span class="badge" id="itemsBadge">1</span>
+              </button>
+              <button class="step-tab" type="button" data-step="2">
+                Logistics
+              </button>
+              <button class="step-tab" type="button" data-step="3">
+                Remarks
+              </button>
+            </div>
+
+            <div class="card">
+              <div class="step active-step" data-step-panel="0">
+                <div class="section">
+                  <div class="section-header">
+                    <i class="fa-regular fa-clipboard"></i>
+                    <h3>Enquiry Details</h3>
+                  </div>
+
+                  <div class="grid4">
+                    <div>
+                      <label for="enquiry-no">Enquiry No</label>
+                      <input id="enquiry-no" value="ENQ-2526-0001" disabled />
+                    </div>
+                    <div>
+                      <label for="enquiry-date">Enquiry Date</label>
+                      <input id="enquiry-date" type="date" required />
+                    </div>
+                    <div>
+                      <label for="expected-closure">Expected Closure</label>
+                      <input id="expected-closure" type="date" />
+                    </div>
+                    <div>
+                      <label for="followup-date">Follow-Up Date</label>
+                      <input id="followup-date" type="date" />
+                    </div>
+                    <div>
+                      <label for="priority">Priority</label>
+                      <select id="priority">
+                        <option>Medium</option>
+                        <option>High</option>
+                        <option>Low</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="status">Status</label>
+                      <select id="status">
+                        <option>New</option>
+                        <option>In Progress</option>
+                        <option>Completed</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="enquiry-source">Enquiry Source</label>
+                      <select id="enquiry-source">
+                        <option>Email</option>
+                        <option>Phone</option>
+                        <option>Website</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="assigned-to">Assigned To</label>
+                      <select id="assigned-to">
+                        <option>Arjun Mehta</option>
+                        <option>Priya Kumar</option>
+                        <option>Rahul Singh</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="section">
+                  <div class="section-header">
+                    <i class="fa-regular fa-user"></i>
+                    <h3>Customer Details</h3>
+                  </div>
+
+                  <div class="grid3">
+                    <div>
+                      <label for="sales-customer-id">Customer ID</label>
+                      <input id="sales-customer-id" />
+                    </div>
+                    <div>
+                      <label for="sales-customer-name"
+                        >Customer / Trade Name</label
+                      >
+                      <input id="sales-customer-name" required />
+                    </div>
+                    <div>
+                      <label for="sales-contact-person">Contact Person</label>
+                      <input id="sales-contact-person" />
+                    </div>
+                    <div>
+                      <label for="sales-phone">Phone</label>
+                      <input id="sales-phone" type="tel" />
+                    </div>
+                    <div>
+                      <label for="sales-email">Email</label>
+                      <input id="sales-email" type="email" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="section">
+                  <div class="section-header">
+                    <i class="fa-solid fa-money-bill"></i>
+                    <h3>Commercial Terms</h3>
+                  </div>
+
+                  <div class="grid3">
+                    <div>
+                      <label for="sales-currency">Currency</label>
+                      <select id="sales-currency">
+                        <option>INR</option>
+                        <option>USD</option>
+                        <option>EUR</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="sales-payment-terms">Payment Terms</label>
+                      <select id="sales-payment-terms">
+                        <option>30 Days</option>
+                        <option>15 Days</option>
+                        <option>60 Days</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="sales-incoterms">Incoterms</label>
+                      <select id="sales-incoterms">
+                        <option>FOB</option>
+                        <option>CIF</option>
+                        <option>Ex Works</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" data-step-panel="1">
+                <div class="section-header">
+                  <i class="fa-solid fa-box"></i>
+                  <h3>Product / Service Requirements</h3>
+                </div>
+
+                <div class="items-table-wrap">
+                  <table id="items">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Item Code</th>
+                        <th>Description</th>
+                        <th>HSN</th>
+                        <th>Qty</th>
+                        <th>UOM</th>
+                        <th>Target Price</th>
+                        <th>Curr.</th>
+                        <th>Remarks</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td><input value="ITM-0001" /></td>
+                        <td><input placeholder="Description" /></td>
+                        <td><input placeholder="HSN" /></td>
+                        <td>
+                          <input
+                            type="number"
+                            value="0"
+                            min="0"
+                            class="qty-input"
+                          />
+                        </td>
+                        <td><input value="Nos" /></td>
+                        <td>
+                          <input
+                            type="number"
+                            value="0.00"
+                            min="0"
+                            step="0.01"
+                          />
+                        </td>
+                        <td>
+                          <select>
+                            <option>INR</option>
+                            <option>USD</option>
+                            <option>EUR</option>
+                          </select>
+                        </td>
+                        <td><input placeholder="Remarks" /></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <button class="add-row" type="button" data-add-row>
+                  + Add Line Item
+                </button>
+
+                <div class="item-footer">
+                  <span>Total Items : <strong id="totalItems">1</strong></span>
+                  <span>Total Qty : <strong id="totalQty">0</strong></span>
+                </div>
+              </div>
+
+              <div class="step" data-step-panel="2">
+                <div class="section">
+                  <div class="section-header">
+                    <i class="fa-solid fa-truck"></i>
+                    <h3>Shipment Details</h3>
+                  </div>
+
+                  <div class="grid3">
+                    <div>
+                      <label for="shipment-mode">Shipment Mode</label>
+                      <select id="shipment-mode">
+                        <option>Sea</option>
+                        <option>Air</option>
+                        <option>Road</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="target-shipment-date"
+                        >Target Shipment Date</label
+                      >
+                      <input id="target-shipment-date" type="date" />
+                    </div>
+                    <div>
+                      <label for="shipment-incoterms">Incoterms</label>
+                      <select id="shipment-incoterms">
+                        <option>FOB</option>
+                        <option>CIF</option>
+                        <option>Ex Works</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="port-loading">Port Of Loading</label>
+                      <input id="port-loading" />
+                    </div>
+                    <div>
+                      <label for="port-discharge">Port Of Discharge</label>
+                      <input id="port-discharge" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="section">
+                  <div class="section-header">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h3>Delivery Address</h3>
+                  </div>
+                  <textarea id="delivery-address" rows="5"></textarea>
+                </div>
+              </div>
+
+              <div class="step" data-step-panel="3">
+                <div class="section">
+                  <div class="section-header">
+                    <i class="fa-regular fa-file-lines"></i>
+                    <h3>Customer Requirements</h3>
+                  </div>
+                  <textarea id="customer-requirements"></textarea>
+                </div>
+
+                <div class="section">
+                  <div class="section-header">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Competitive Intelligence</h3>
+                  </div>
+                  <textarea id="competitive-intelligence"></textarea>
+                </div>
+
+                <div class="section">
+                  <div class="section-header">
+                    <i class="fa-solid fa-lock"></i>
+                    <h3>Internal Notes</h3>
+                  </div>
+                  <textarea id="internal-notes"></textarea>
+                </div>
+              </div>
+
+              <div class="footer">
+                <button class="btn" type="button" data-wizard-prev>
+                  <i class="fa-solid fa-arrow-left"></i>
+                  Previous
+                </button>
+                <button class="btn primary" type="button" data-wizard-next>
+                  <span>Next</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="module"
+          data-module="customer-master"
+          aria-labelledby="customerModuleTitle"
+          hidden
+        >
+          <div class="module-heading" aria-label="Masters breadcrumb">
+            <strong>Masters</strong>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Customer</span>
+          </div>
+
+          <div class="module-tabs">
+            <div class="active">
+              <i class="fa-regular fa-address-book"></i>
+              Customer
+            </div>
+            <div>
+              <i class="fa-regular fa-building"></i>
+              Supplier
+            </div>
+            <div>
+              <i class="fa-solid fa-cube"></i>
+              Item / SKU
+            </div>
+            <div>
+              <i class="fa-solid fa-briefcase"></i>
+              Forwarder
+            </div>
+            <div>
+              <i class="fa-solid fa-truck"></i>
+              Transporter
+            </div>
+            <div>
+              <i class="fa-solid fa-shield-halved"></i>
+              CHA
+            </div>
+            <div>
+              <i class="fa-solid fa-location-dot"></i>
+              Location
+            </div>
+            <div>
+              <i class="fa-solid fa-globe"></i>
+              Currency
+            </div>
+          </div>
+
+          <div class="toolbar">
+            <div class="record-title">
+              <span class="record-icon">
+                <i class="fa-regular fa-address-book"></i>
+              </span>
+              <span>
+                <small class="record-crumb">Masters &gt; Customer</small>
+                <h2 id="customerModuleTitle">New Customer</h2>
+              </span>
+            </div>
+
+            <div class="toolbar-actions">
+              <button class="btn muted" type="button" disabled>
+                CUS-2526-0001
+              </button>
+              <button class="btn" type="button" data-action="discard">
+                <i class="fa-solid fa-xmark"></i>
+                Discard
+              </button>
+              <button class="btn" type="button" data-action="new">+ New</button>
+              <button class="btn" type="button" data-action="verify">
+                Verify GST
+              </button>
+              <button class="btn primary" type="button" data-action="save">
+                <i class="fa-solid fa-floppy-disk"></i>
+                Save
+              </button>
+            </div>
+          </div>
+
+          <div class="quick-actions" aria-label="Masters quick actions">
+            <button class="quick-action" type="button">
+              <i class="fa-solid fa-sort"></i>
+              <span>Sorting</span>
+            </button>
+            <button class="quick-action" type="button">
+              <i class="fa-solid fa-rotate-right"></i>
+              <span>Refresh</span>
+            </button>
+            <button class="quick-action" type="button">
+              <i class="fa-solid fa-print"></i>
+              <span>Print</span>
+            </button>
+            <button class="quick-action" type="button">
+              <i class="fa-solid fa-file-export"></i>
+              <span>Export</span>
+            </button>
+            <button class="quick-action" type="button">
+              <i class="fa-solid fa-chart-column"></i>
+              <span>Graph</span>
+            </button>
+            <button class="quick-action" type="button">
+              <i class="fa-solid fa-database"></i>
+              <span>Backtrack</span>
+            </button>
+            <button class="quick-action" type="button">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+              <span>Customize</span>
+            </button>
+            <button class="quick-action" type="button">
+              <i class="fa-solid fa-filter"></i>
+              <span>Filter</span>
+              <i class="fa-solid fa-caret-down quick-caret"></i>
+            </button>
+            <button class="quick-action" type="button">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <span>Analyze</span>
+            </button>
+            <button class="quick-action" type="button">
+              <i class="fa-solid fa-shuffle"></i>
+              <span>Cross-reference</span>
+            </button>
+            <button class="quick-action" type="button">
+              <i class="fa-solid fa-gears"></i>
+              <span>Options</span>
+              <i class="fa-solid fa-caret-down quick-caret"></i>
+            </button>
+            <button class="quick-action" type="button">
+              <i class="fa-regular fa-circle-xmark"></i>
+              <span>Close</span>
+            </button>
+          </div>
+
+          <div
+            class="wizard"
+            data-wizard
+            data-submit-title="Customer Created"
+            data-submit-message="Customer Master saved successfully."
+          >
+            <div
+              class="steps"
+              role="tablist"
+              aria-label="Customer master steps"
+            >
+              <button class="step-tab active" type="button" data-step="0">
+                Basic Information
+              </button>
+              <button class="step-tab" type="button" data-step="1">
+                Address Information
+              </button>
+              <button class="step-tab" type="button" data-step="2">
+                Bank Details
+              </button>
+              <button class="step-tab" type="button" data-step="3">
+                Payment Terms
+              </button>
+              <button class="step-tab" type="button" data-step="4">
+                Communication
+              </button>
+              <button class="step-tab" type="button" data-step="5">
+                Statutory Information
+              </button>
+            </div>
+
+            <div class="card">
+              <div class="step active-step" data-step-panel="0">
+                <div class="section">
+                  <div class="section-header">
+                    <i class="fa-regular fa-id-card"></i>
+                    <h3>Basic Information</h3>
+                  </div>
+
+                  <div class="grid4">
+                    <div>
+                      <label for="customer-code">Customer Code</label>
+                      <input
+                        id="customer-code"
+                        value="CUS-2526-0001"
+                        disabled
+                      />
+                    </div>
+                    <div>
+                      <label for="customer-type">Customer Type</label>
+                      <select id="customer-type">
+                        <option>Domestic</option>
+                        <option>Export</option>
+                        <option>SEZ</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="legal-name">Legal Name</label>
+                      <input id="legal-name" required />
+                    </div>
+                    <div>
+                      <label for="trade-name">Trade Name</label>
+                      <input id="trade-name" />
+                    </div>
+                    <div>
+                      <label for="customer-category">Category</label>
+                      <select id="customer-category">
+                        <option>Retail</option>
+                        <option>Distributor</option>
+                        <option>OEM</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="industry">Industry</label>
+                      <input id="industry" />
+                    </div>
+                    <div>
+                      <label for="account-owner">Account Owner</label>
+                      <select id="account-owner">
+                        <option>Arjun Mehta</option>
+                        <option>Priya Kumar</option>
+                        <option>Rahul Singh</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="customer-status">Status</label>
+                      <select id="customer-status">
+                        <option>Active</option>
+                        <option>On Hold</option>
+                        <option>Inactive</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" data-step-panel="1">
+                <div class="section">
+                  <div class="section-header">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h3>Billing Address</h3>
+                  </div>
+
+                  <div class="grid3">
+                    <div>
+                      <label for="billing-address-1">Address Line 1</label>
+                      <input id="billing-address-1" />
+                    </div>
+                    <div>
+                      <label for="billing-address-2">Address Line 2</label>
+                      <input id="billing-address-2" />
+                    </div>
+                    <div>
+                      <label for="billing-city">City</label>
+                      <input id="billing-city" />
+                    </div>
+                    <div>
+                      <label for="billing-state">State</label>
+                      <input id="billing-state" />
+                    </div>
+                    <div>
+                      <label for="billing-country">Country</label>
+                      <input id="billing-country" value="India" />
+                    </div>
+                    <div>
+                      <label for="billing-pincode">PIN Code</label>
+                      <input id="billing-pincode" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="section">
+                  <div class="section-header">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <h3>Shipping Address</h3>
+                  </div>
+
+                  <div class="grid3">
+                    <div>
+                      <label for="shipping-address-1">Address Line 1</label>
+                      <input id="shipping-address-1" />
+                    </div>
+                    <div>
+                      <label for="shipping-city">City</label>
+                      <input id="shipping-city" />
+                    </div>
+                    <div>
+                      <label for="shipping-pincode">PIN Code</label>
+                      <input id="shipping-pincode" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" data-step-panel="2">
+                <div class="section">
+                  <div class="section-header">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <h3>Bank Details</h3>
+                  </div>
+
+                  <div class="grid3">
+                    <div>
+                      <label for="bank-name">Bank Name</label>
+                      <input id="bank-name" />
+                    </div>
+                    <div>
+                      <label for="account-number">Account Number</label>
+                      <input id="account-number" />
+                    </div>
+                    <div>
+                      <label for="ifsc-code">IFSC / Swift Code</label>
+                      <input id="ifsc-code" />
+                    </div>
+                    <div>
+                      <label for="account-holder">Account Holder</label>
+                      <input id="account-holder" />
+                    </div>
+                    <div>
+                      <label for="bank-branch">Branch</label>
+                      <input id="bank-branch" />
+                    </div>
+                    <div>
+                      <label for="bank-currency">Currency</label>
+                      <select id="bank-currency">
+                        <option>INR</option>
+                        <option>USD</option>
+                        <option>EUR</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" data-step-panel="3">
+                <div class="section">
+                  <div class="section-header">
+                    <i class="fa-solid fa-receipt"></i>
+                    <h3>Payment Terms</h3>
+                  </div>
+
+                  <div class="grid4">
+                    <div>
+                      <label for="customer-payment-term">Payment Term</label>
+                      <select id="customer-payment-term">
+                        <option>30 Days</option>
+                        <option>Advance</option>
+                        <option>15 Days</option>
+                        <option>60 Days</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="credit-limit">Credit Limit</label>
+                      <input id="credit-limit" type="number" min="0" />
+                    </div>
+                    <div>
+                      <label for="credit-days">Credit Days</label>
+                      <input
+                        id="credit-days"
+                        type="number"
+                        min="0"
+                        value="30"
+                      />
+                    </div>
+                    <div>
+                      <label for="price-list">Price List</label>
+                      <select id="price-list">
+                        <option>Standard Domestic</option>
+                        <option>Export USD</option>
+                        <option>Distributor</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="tax-preference">Tax Preference</label>
+                      <select id="tax-preference">
+                        <option>Taxable</option>
+                        <option>Exempt</option>
+                        <option>Reverse Charge</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="invoice-cycle">Invoice Cycle</label>
+                      <select id="invoice-cycle">
+                        <option>Order Wise</option>
+                        <option>Weekly</option>
+                        <option>Monthly</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" data-step-panel="4">
+                <div class="section">
+                  <div class="section-header">
+                    <i class="fa-regular fa-comments"></i>
+                    <h3>Communication</h3>
+                  </div>
+
+                  <div class="grid3">
+                    <div>
+                      <label for="primary-contact">Primary Contact</label>
+                      <input id="primary-contact" />
+                    </div>
+                    <div>
+                      <label for="customer-phone">Phone</label>
+                      <input id="customer-phone" type="tel" />
+                    </div>
+                    <div>
+                      <label for="customer-email">Email</label>
+                      <input id="customer-email" type="email" />
+                    </div>
+                    <div>
+                      <label for="alternate-contact">Alternate Contact</label>
+                      <input id="alternate-contact" />
+                    </div>
+                    <div>
+                      <label for="communication-mode">Preferred Mode</label>
+                      <select id="communication-mode">
+                        <option>Email</option>
+                        <option>Phone</option>
+                        <option>WhatsApp</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="customer-website">Website</label>
+                      <input id="customer-website" type="url" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step" data-step-panel="5">
+                <div class="section">
+                  <div class="section-header">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <h3>Statutory Information</h3>
+                  </div>
+
+                  <div class="grid3">
+                    <div>
+                      <label for="gstin">GSTIN</label>
+                      <input id="gstin" />
+                    </div>
+                    <div>
+                      <label for="pan">PAN</label>
+                      <input id="pan" />
+                    </div>
+                    <div>
+                      <label for="tan">TAN</label>
+                      <input id="tan" />
+                    </div>
+                    <div>
+                      <label for="cin">CIN</label>
+                      <input id="cin" />
+                    </div>
+                    <div>
+                      <label for="msme">MSME / Udyam No</label>
+                      <input id="msme" />
+                    </div>
+                    <div>
+                      <label for="eori">IEC / EORI</label>
+                      <input id="eori" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="section">
+                  <div class="section-header">
+                    <i class="fa-regular fa-note-sticky"></i>
+                    <h3>Compliance Notes</h3>
+                  </div>
+                  <textarea id="compliance-notes"></textarea>
+                </div>
+              </div>
+
+              <div class="footer">
+                <button class="btn" type="button" data-wizard-prev>
+                  <i class="fa-solid fa-arrow-left"></i>
+                  Previous
+                </button>
+                <button class="btn primary" type="button" data-wizard-next>
+                  <span>Next</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div
+      class="modal-backdrop"
+      id="statusModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="statusModalTitle"
+      hidden
+    >
+      <div class="modal">
+        <button class="modal-close" type="button" aria-label="Close modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal-icon">
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <h3 id="statusModalTitle">Submitted</h3>
+        <p id="statusModalMessage">Sales Enquiry submitted successfully.</p>
+        <div class="modal-actions">
+          <button class="btn modal-cancel" type="button">Cancel</button>
+          <button class="btn primary modal-action" type="button">Done</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
