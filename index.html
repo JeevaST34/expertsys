@@ -23,14 +23,16 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       rel="stylesheet"
     />
-    <link href="css/app.css" rel="stylesheet" />
+    <link href="./css/app.css" rel="stylesheet" />
   </head>
 
   <body>
     <div class="layout">
       <aside class="sidebar" role="navigation" aria-label="ERP modules">
         <div class="sidebar-header">
-          <div class="logo">ASTRA</div>
+          <div class="logo">
+            <img src="./assets/astra_logo.png" alt="ASTRA ERP" />
+          </div>
           <button
             class="sidebar-toggle"
             id="sidebarToggle"
@@ -52,15 +54,15 @@
             data-label="Sales"
             data-module-target="sales-enquiry"
           >
-            <i class="fa-solid fa-file-signature"></i>
+            <i class="fa-solid fa-cart-shopping"></i>
             <span>Sales</span>
           </button>
           <button class="nav" type="button" data-label="Financials">
-            <i class="fa-solid fa-chart-line"></i>
+            <i class="fa-solid fa-sack-dollar"></i>
             <span>Financials</span>
           </button>
           <button class="nav" type="button" data-label="Inventory">
-            <i class="fa-solid fa-boxes-stacked"></i>
+            <i class="fa-solid fa-warehouse"></i>
             <span>Inventory</span>
           </button>
           <button
@@ -69,11 +71,11 @@
             data-label="Masters"
             data-module-target="customer-master"
           >
-            <i class="fa-solid fa-address-book"></i>
+            <i class="fa-solid fa-users-gear"></i>
             <span>Masters</span>
           </button>
           <button class="nav" type="button" data-label="Fixed Asset">
-            <i class="fa-solid fa-rotate"></i>
+            <i class="fa-solid fa-building-columns"></i>
             <span>Fixed Asset</span>
           </button>
           <button class="nav" type="button" data-label="Production">
@@ -85,11 +87,11 @@
             <span>POS</span>
           </button>
           <button class="nav" type="button" data-label="Quality Control">
-            <i class="fa-solid fa-chart-column"></i>
+            <i class="fa-solid fa-clipboard-check"></i>
             <span>Quality Control</span>
           </button>
           <button class="nav" type="button" data-label="Settings">
-            <i class="fa-solid fa-gear"></i>
+            <i class="fa-solid fa-sliders"></i>
             <span>Settings</span>
           </button>
         </nav>
@@ -133,40 +135,6 @@
           data-module="sales-enquiry"
           aria-labelledby="salesModuleTitle"
         >
-          <div class="module-heading" aria-label="Sales breadcrumb">
-            <strong>Sales</strong>
-            <i class="fa-solid fa-chevron-right"></i>
-            <span>Sales Enquiry</span>
-          </div>
-
-          <div class="module-tabs">
-            <div class="active">
-              <i class="fa-regular fa-clipboard"></i>
-              Sales Enquiry
-            </div>
-            <div>
-              <i class="fa-regular fa-file-lines"></i>
-              Quotation
-            </div>
-            <div>
-              <i class="fa-solid fa-cart-shopping"></i>
-              Sales Order
-              <span class="tab-count">3</span>
-            </div>
-            <div>
-              <i class="fa-solid fa-file-invoice"></i>
-              Invoice
-            </div>
-            <div>
-              <i class="fa-solid fa-rotate-right"></i>
-              Sales Return
-            </div>
-            <div>
-              <i class="fa-regular fa-file"></i>
-              Credit Note
-            </div>
-          </div>
-
           <div class="toolbar">
             <div class="record-title">
               <span class="record-icon">
@@ -184,73 +152,31 @@
               <button class="btn muted" type="button" disabled>
                 ENQ-2526-0001
               </button>
-              <button class="btn" type="button" data-action="discard">
-                <i class="fa-solid fa-xmark"></i>
-                Discard
+              <button class="btn" type="button" data-quick-action="sorting">
+                <i class="fa-solid fa-sort"></i>
+                Sorting
               </button>
-              <button class="btn" type="button" data-action="new">+ New</button>
-              <button class="btn" type="button" data-action="convert">
-                <i class="fa-regular fa-file-lines"></i>
-                Convert To Quote
+              <button class="btn" type="button" data-quick-action="refresh">
+                <i class="fa-solid fa-rotate-right"></i>
+                Refresh
               </button>
-              <button class="btn primary" type="button" data-action="save">
-                <i class="fa-solid fa-floppy-disk"></i>
-                Save
+              <button class="btn" type="button" data-quick-action="print">
+                <i class="fa-solid fa-print"></i>
+                Print
+              </button>
+              <button class="btn" type="button" data-quick-action="export">
+                <i class="fa-solid fa-file-export"></i>
+                Export
+              </button>
+              <button class="btn" type="button" data-quick-action="graph">
+                <i class="fa-solid fa-chart-column"></i>
+                Graph
+              </button>
+              <button class="btn" type="button" data-quick-action="backtrack">
+                <i class="fa-solid fa-database"></i>
+                Backtrack
               </button>
             </div>
-          </div>
-
-          <div class="quick-actions" aria-label="Sales quick actions">
-            <button class="quick-action" type="button">
-              <i class="fa-solid fa-sort"></i>
-              <span>Sorting</span>
-            </button>
-            <button class="quick-action" type="button">
-              <i class="fa-solid fa-rotate-right"></i>
-              <span>Refresh</span>
-            </button>
-            <button class="quick-action" type="button">
-              <i class="fa-solid fa-print"></i>
-              <span>Print</span>
-            </button>
-            <button class="quick-action" type="button">
-              <i class="fa-solid fa-file-export"></i>
-              <span>Export</span>
-            </button>
-            <button class="quick-action" type="button">
-              <i class="fa-solid fa-chart-column"></i>
-              <span>Graph</span>
-            </button>
-            <button class="quick-action" type="button">
-              <i class="fa-solid fa-database"></i>
-              <span>Backtrack</span>
-            </button>
-            <button class="quick-action" type="button">
-              <i class="fa-solid fa-screwdriver-wrench"></i>
-              <span>Customize</span>
-            </button>
-            <button class="quick-action" type="button">
-              <i class="fa-solid fa-filter"></i>
-              <span>Filter</span>
-              <i class="fa-solid fa-caret-down quick-caret"></i>
-            </button>
-            <button class="quick-action" type="button">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <span>Analyze</span>
-            </button>
-            <button class="quick-action" type="button">
-              <i class="fa-solid fa-shuffle"></i>
-              <span>Cross-reference</span>
-            </button>
-            <button class="quick-action" type="button">
-              <i class="fa-solid fa-gears"></i>
-              <span>Options</span>
-              <i class="fa-solid fa-caret-down quick-caret"></i>
-            </button>
-            <button class="quick-action" type="button">
-              <i class="fa-regular fa-circle-xmark"></i>
-              <span>Close</span>
-            </button>
           </div>
 
           <div
@@ -565,47 +491,6 @@
           aria-labelledby="customerModuleTitle"
           hidden
         >
-          <div class="module-heading" aria-label="Masters breadcrumb">
-            <strong>Masters</strong>
-            <i class="fa-solid fa-chevron-right"></i>
-            <span>Customer</span>
-          </div>
-
-          <div class="module-tabs">
-            <div class="active">
-              <i class="fa-regular fa-address-book"></i>
-              Customer
-            </div>
-            <div>
-              <i class="fa-regular fa-building"></i>
-              Supplier
-            </div>
-            <div>
-              <i class="fa-solid fa-cube"></i>
-              Item / SKU
-            </div>
-            <div>
-              <i class="fa-solid fa-briefcase"></i>
-              Forwarder
-            </div>
-            <div>
-              <i class="fa-solid fa-truck"></i>
-              Transporter
-            </div>
-            <div>
-              <i class="fa-solid fa-shield-halved"></i>
-              CHA
-            </div>
-            <div>
-              <i class="fa-solid fa-location-dot"></i>
-              Location
-            </div>
-            <div>
-              <i class="fa-solid fa-globe"></i>
-              Currency
-            </div>
-          </div>
-
           <div class="toolbar">
             <div class="record-title">
               <span class="record-icon">
@@ -621,72 +506,35 @@
               <button class="btn muted" type="button" disabled>
                 CUS-2526-0001
               </button>
-              <button class="btn" type="button" data-action="discard">
-                <i class="fa-solid fa-xmark"></i>
-                Discard
+              <button class="btn" type="button" data-quick-action="customize">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                Customize
               </button>
-              <button class="btn" type="button" data-action="new">+ New</button>
-              <button class="btn" type="button" data-action="verify">
-                Verify GST
+              <button class="btn" type="button" data-quick-action="filter">
+                <i class="fa-solid fa-filter"></i>
+                Filter
               </button>
-              <button class="btn primary" type="button" data-action="save">
-                <i class="fa-solid fa-floppy-disk"></i>
-                Save
+              <button class="btn" type="button" data-quick-action="analyze">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                Analyze
+              </button>
+              <button
+                class="btn"
+                type="button"
+                data-quick-action="cross-reference"
+              >
+                <i class="fa-solid fa-shuffle"></i>
+                Cross-reference
+              </button>
+              <button class="btn" type="button" data-quick-action="options">
+                <i class="fa-solid fa-gears"></i>
+                Options
+              </button>
+              <button class="btn" type="button" data-quick-action="close">
+                <i class="fa-regular fa-circle-xmark"></i>
+                Close
               </button>
             </div>
-          </div>
-
-          <div class="quick-actions" aria-label="Masters quick actions">
-            <button class="quick-action" type="button">
-              <i class="fa-solid fa-sort"></i>
-              <span>Sorting</span>
-            </button>
-            <button class="quick-action" type="button">
-              <i class="fa-solid fa-rotate-right"></i>
-              <span>Refresh</span>
-            </button>
-            <button class="quick-action" type="button">
-              <i class="fa-solid fa-print"></i>
-              <span>Print</span>
-            </button>
-            <button class="quick-action" type="button">
-              <i class="fa-solid fa-file-export"></i>
-              <span>Export</span>
-            </button>
-            <button class="quick-action" type="button">
-              <i class="fa-solid fa-chart-column"></i>
-              <span>Graph</span>
-            </button>
-            <button class="quick-action" type="button">
-              <i class="fa-solid fa-database"></i>
-              <span>Backtrack</span>
-            </button>
-            <button class="quick-action" type="button">
-              <i class="fa-solid fa-screwdriver-wrench"></i>
-              <span>Customize</span>
-            </button>
-            <button class="quick-action" type="button">
-              <i class="fa-solid fa-filter"></i>
-              <span>Filter</span>
-              <i class="fa-solid fa-caret-down quick-caret"></i>
-            </button>
-            <button class="quick-action" type="button">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <span>Analyze</span>
-            </button>
-            <button class="quick-action" type="button">
-              <i class="fa-solid fa-shuffle"></i>
-              <span>Cross-reference</span>
-            </button>
-            <button class="quick-action" type="button">
-              <i class="fa-solid fa-gears"></i>
-              <span>Options</span>
-              <i class="fa-solid fa-caret-down quick-caret"></i>
-            </button>
-            <button class="quick-action" type="button">
-              <i class="fa-regular fa-circle-xmark"></i>
-              <span>Close</span>
-            </button>
           </div>
 
           <div
@@ -1065,6 +913,6 @@
       </div>
     </div>
 
-    <script src="js/app.js"></script>
+    <script src="./js/app.js"></script>
   </body>
 </html>

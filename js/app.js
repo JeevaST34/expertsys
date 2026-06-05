@@ -121,7 +121,8 @@ function initWizard(wizard) {
       const isActive = index === currentStep;
       tab.classList.toggle("active", isActive);
       tab.setAttribute("aria-selected", String(isActive));
-      tab.setAttribute("aria-disabled", "true");
+      tab.setAttribute("aria-disabled", "false");
+      tab.tabIndex = 0;
     });
 
     if (prevBtn) {
@@ -169,6 +170,12 @@ function initWizard(wizard) {
 
   prevBtn?.addEventListener("click", previous);
   nextBtn?.addEventListener("click", next);
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => {
+      const stepIndex = Number(tab.dataset.step ?? index);
+      goToStep(Number.isNaN(stepIndex) ? index : stepIndex);
+    });
+  });
 
   render();
 
