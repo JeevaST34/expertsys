@@ -146,7 +146,8 @@ function initWizard(wizard) {
   function submit() {
     const module = wizard.closest("[data-module]");
     const title = wizard.dataset.submitTitle || "Submitted";
-    const message = wizard.dataset.submitMessage || "Record saved successfully.";
+    const message =
+      wizard.dataset.submitMessage || "Record saved successfully.";
     console.log("Form Submitted:", collectFormData(module));
     openStatusModal(title, message);
   }
